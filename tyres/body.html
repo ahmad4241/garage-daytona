@@ -1,0 +1,140 @@
+<div id="gd-pneus">
+<main>
+  <!-- HERO -->
+  <section class="hero hx" aria-labelledby="h1">
+    <div class="wrap hx-grid">
+      <div class="hx-copy">
+        <div class="eyebrow hx-in">Garage Daytona · Genève</div>
+        <h1 id="h1" class="hx-title"><span class="hx-l"><span>Pneus</span></span><span class="hx-l"><span>d'occasion</span></span><em class="hx-in">Contrôlés. Vérifiés. Prêts à rouler.</em></h1>
+        <p class="hx-lead hx-in">Des pneus de marque vérifiés par nos mécaniciens, à prix d'occasion.</p>
+        <form class="hx-find hx-in" id="finder" aria-label="Trouver mes pneus">
+          <div class="hx-f"><label for="fW">Largeur</label><select id="fW"></select></div>
+          <span class="hx-sep">/</span>
+          <div class="hx-f"><label for="fA">Hauteur</label><select id="fA"></select></div>
+          <span class="hx-sep">R</span>
+          <div class="hx-f"><label for="fD">Jante</label><select id="fD"></select></div>
+          <button class="hx-go" type="submit">Trouver mes pneus <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="hx-hint hx-in">La taille est écrite sur le flanc, par exemple <b>205/55 R16</b>.</div>
+      </div>
+
+      <div class="stage mode-photo hx-stage" id="stage">
+        <div class="photo-wrap"><img class="hero-photo" id="heroPhoto" src="/wp-content/uploads/pneus/hero.webp" alt="Pneu d'hiver Michelin sur jante noire, posé sur un socle lumineux"></div>
+        <i class="hx-glow" aria-hidden="true"></i>
+        <div class="callouts" id="callouts" aria-hidden="true">
+          <div class="co" style="--x:22%;--y:37%"><i class="lnk"></i><i class="dot"></i><div class="lbl"><b>Flancs</b><span>contrôlés</span></div></div>
+          <div class="co" style="--x:44%;--y:47.5%"><i class="lnk"></i><i class="dot"></i><div class="lbl"><b>Prix fixe</b><span>le jeu complet</span></div></div>
+          <div class="co" style="--x:78%;--y:57%"><i class="lnk"></i><i class="dot"></i><div class="lbl"><b>Photos</b><span>réelles, chaque jeu</span></div></div>
+        </div>
+      </div>
+    </div>
+    <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.querySelector(".hx-copy").classList.add("js-seq");</script>
+    <a class="hx-cue" href="#catalogue"><span>Découvrir le stock</span><i aria-hidden="true"></i></a>
+  </section>
+
+  <!-- CATALOGUE -->
+  <section class="cat" id="catalogue" aria-labelledby="catTitle">
+    <div class="wrap">
+      <div class="cat-top">
+        <div>
+          <div class="eyebrow">Sur l'étagère</div>
+          <h2 id="catTitle" class="disp">Le stock <em>du moment</em></h2>
+        </div>
+
+      </div>
+      <div class="activebar" id="activebar">
+        <span class="demo-note">Stock réel · nouveaux jeux chaque semaine</span>
+      </div>
+      <div id="shelves"></div>
+    </div>
+  </section>
+
+  <!-- SIZES -->
+  <section class="how" aria-labelledby="howTitle">
+    <div class="wrap">
+      <div class="eyebrow">Comment ça marche</div>
+      <h2 id="howTitle" class="disp">Réservé, retiré, <em>roulé</em></h2>
+      <div class="steps">
+        <div class="step"><h3>Choisissez votre taille</h3><p>Filtrez par largeur, hauteur et jante, ou par saison. Chaque jeu affiche ses photos réelles et son année.</p></div>
+        <div class="step"><h3>Réservez ou écrivez-nous</h3><p>Réservez en ligne, ou écrivez-nous sur WhatsApp. Nous gardons le jeu de côté et confirmons par téléphone.</p></div>
+        <div class="step"><h3>Retrait à l'atelier</h3><p>Venez récupérer votre jeu dans notre garage, Rue de Lausanne 64. Vous payez sur place, au retrait.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- Drawer: product + purchase -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer dx" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drTitle" aria-hidden="true">
+  <div class="dr-head">
+    <div class="dh-l"><span class="dh-ref" id="drRef">Réf.</span><span class="dh-season" id="drSeason"></span></div>
+    <button class="x" id="drClose" aria-label="Fermer"><svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true"><path d="M2 2l10 10M12 2 2 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="dr-scroll" id="drScroll">
+    <div id="drMain">
+      <div class="dr-img" id="drGal"><img id="drImg" alt=""><span class="gbadge">Photo réelle</span><button class="gnav gprev" id="gPrev" type="button" aria-label="Photo précédente">‹</button><button class="gnav gnext" id="gNext" type="button" aria-label="Photo suivante">›</button><span class="gcap" id="gCap"></span></div><div class="gthumbs" id="gThumbs"></div><p class="greal" id="gReal" hidden></p>
+      <div class="dx-top">
+        <div class="dr-title">
+          <div class="brand" id="drBrand"></div>
+          <div class="size" id="drTitle"></div>
+        </div>
+        <div class="dx-price"><b class="num" id="dxPrice"></b><small id="dxPer"></small></div>
+      </div>
+      <ul class="dx-trust"><li>Retrait au garage</li><li>Paiement sur place</li><li id="dxRims">Jantes incluses</li></ul>
+      <dl class="specs" id="drSpecs"></dl>
+      <p class="legal">Minimum légal en Suisse : 1,6 mm. Pour l'hiver, le TCS recommande au moins 4 mm.</p>
+
+      <div class="opt-label" id="qtyLabel">Quantité</div>
+      <div class="seg" id="qtySeg" role="group" aria-labelledby="qtyLabel">
+        <button type="button" data-q="1">1</button>
+        <button type="button" data-q="2">2</button>
+        <button type="button" data-q="4">4</button>
+      </div>
+
+      <input type="checkbox" id="mount" hidden>
+
+      <div class="total">
+        <div><div class="eyebrow">Prix</div><small class="num" id="totalDetail"></small></div>
+        <div class="price num" id="totalPrice"></div>
+      </div>
+
+      <form class="form" id="resForm" novalidate>
+        <div class="dx-bk-h"><b>Réserver ce jeu</b><span>Sans paiement en ligne. Le garage vous rappelle pour confirmer.</span></div>
+        <label class="sr" for="rName">Nom</label>
+        <input id="rName" autocomplete="name" placeholder="Nom et prénom">
+        <label class="sr" for="rPhone">Téléphone</label>
+        <input id="rPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Téléphone">
+        <div class="opt-label" id="dayLabel">Jour de retrait</div>
+        <div class="dx-days" id="dxDays" role="group" aria-labelledby="dayLabel"></div>
+        <label class="sr" for="rDay">Jour souhaité</label><select id="rDay" hidden></select>
+        <div class="err" id="rErr" role="alert"></div>
+      </form>
+    </div>
+
+    <div class="done" id="drDone" hidden>
+      <div class="ring" aria-hidden="true"><svg viewBox="0 0 24 24" width="28" height="28"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Réservation envoyée</h3>
+      <p class="dsub">Le garage vous appelle pour confirmer le créneau.</p>
+      <div class="dcard">
+        <div><span>Référence</span><b class="num" id="doneRef"></b></div>
+        <div><span>Jeu</span><b id="doneWhat"></b></div>
+        <div><span>Retrait</span><b id="doneDay"></b></div>
+        <div><span>Paiement</span><b>Sur place, au garage</b></div>
+      </div>
+      <p id="doneTxt" hidden></p>
+      <a class="btn btn-wa" id="doneWa" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.6l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.7-.1l.9-1.1c.2-.3.5-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.3Z"/></svg> Envoyer aussi par WhatsApp</a>
+    </div>
+  </div>
+  <div class="dr-foot" id="drFoot">
+    <button class="btn btn-copper" id="drReserve" type="button"><span>Réserver</span><i class="sep" aria-hidden="true"></i><span class="num" id="dxBtnPrice"></span></button>
+    <a class="btn btn-wa dx-wa" id="drWa" target="_blank" rel="noopener" aria-label="Réserver par WhatsApp"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.1-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .5 0 .7.6l.9 2.2c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.7-.1l.9-1.1c.2-.3.5-.2.7-.1l2.1 1c.3.2.5.2.6.4.1.1.1.7-.1 1.3Z"/></svg></a>
+  </div>
+</aside>
+
+<!-- Mobile sticky purchase bar -->
+<div class="sticky" id="sticky" aria-live="polite">
+  <div class="s-txt" id="stickyTxt"></div>
+  <button class="btn btn-copper" id="stickyBtn" type="button">Trouver mes pneus</button>
+</div>
+
+
+</div>
